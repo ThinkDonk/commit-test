@@ -1,6 +1,12 @@
 # commit-test
 
+[English](README_EN.md) · [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 基于 git 提交或工作区改动的选择性集成验证：分析影响面，准备环境，通过真实页面验证变更行为，分别保存模块知识与本次证据。P0 冒烟和变更验收分开记录，未覆盖的必要场景不会因已有提交基线而被跳过。
+
+## 使用方式
+
+用「测一下最近的提交/改动」「跑集成测试」「验证这批提交/这次改动」「回归验证」等说法触发。不用于单元测试编写或纯代码审查。五段流程（定范围 → 影响分析 → 环境 → 执行 → 报告）与约束见 [SKILL.md](SKILL.md)，阶段细节按需从 [phases/](phases/) 渐进加载。
 
 ## 结构
 
@@ -29,7 +35,7 @@ D:\projects\CommonAssets\skills\commit-test          （源，git 同步）
 
 ## 同步语义
 
-- **进 git**：SKILL.md、phases/、TEMPLATE.md 及现有 README（方法论，跨机器同步）
+- **进 git**：SKILL.md、phases/、TEMPLATE.md 及两个 README（方法论，跨机器同步）
 - **不进 git**：`projects/`（本机环境、基线、模块知识与运行证据；`.gitignore` 已排除）。忽略目录不等于凭据库，报告不复制密码/令牌。
 
 换新机器拉取本仓库后，首次运行会现场初始化 `projects/<项目名>/`。
